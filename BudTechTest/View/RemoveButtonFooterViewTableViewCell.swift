@@ -6,6 +6,8 @@
 //  Copyright © 2019 Azhar Islam. All rights reserved.
 //
 
+//This class was created to implement the remove button as a tableviewcell in the footer of tableView
+
 import UIKit
 
 protocol RemoveButtonViewProtocol: AnyObject {
@@ -14,7 +16,6 @@ protocol RemoveButtonViewProtocol: AnyObject {
 }
 
 class RemoveButtonFooterViewTableViewCell: UITableViewCell {
-    
     static let height: CGFloat = 100
 
     @IBOutlet weak var removeButton: UIButton!

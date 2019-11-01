@@ -29,12 +29,15 @@ class TransactionViewController: UIViewController {
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    
     private lazy var cellProvider: TransactionViewCellProvider = {
            return TransactionViewCellProvider(vc: self)
        }()
-    var transactions = [Transactions]()
-    var removeButtonHidden: Bool = false
     
+    var transactions = [Transactions]()
+    var items = [Transactions]()
+    var isTapped: Bool?
+    var isEditingCells = false
     
     final let url = URL(string: "http://www.mocky.io/v2/5b36325b340000f60cf88903")
 
@@ -48,38 +51,35 @@ class TransactionViewController: UIViewController {
         self.setNavigation()
         self.setNavTitle(titleStrings.transactions)
         self.setRemoveButtonTitle(titleStrings.remove)
+        tableView.allowsSelection = false
     }
     
     @IBAction func editAction(_ sender: UIBarButtonItem) {
-        self.tableView.isEditing = !self.tableView.isEditing
-        sender.title = self.tableView.isEditing ? titleStrings.done : titleStrings.edit
-        
-        if sender.title == titleStrings.done {
-            removeButton.isHidden = false
-            tableView.allowsSelection = true
-            tableView.allowsMultipleSelection = true
-        } else {
-            removeButton.isHidden = true
-            tableView.allowsSelection = false
-        }
-        
+        isEditingCells = !isEditingCells
+        sender.title = isEditingCells ? titleStrings.done : titleStrings.edit
+        removeButton.isHidden = !isEditingCells
+        tableView.allowsMultipleSelection = isEditingCells
+        tableView.allowsSelection = isEditingCells
     }
     
     @IBAction func removeCellTapped(_ sender: Any) {
+        
+        //  The best way to present this would have been to configure the didSelect tableView items and call a delegate that receives the call that a user has selected a row, then do the logic of comparing the two arrays and then add the action inside this. Struggled with doing that efficienty so found a way to delete the items in a hacky way
+        
+        //  Another thing I did initially was use the editingStyle = .delete on tableView delegate but this only allowed me to swipe and delete which didn't meet requirement
+        
         if let selectedRows = tableView.indexPathsForSelectedRows {
-            
-            var items = [Transactions]()
-            for indexPath in selectedRows  {
-                items.append(transactions[indexPath.row])
+            let sortedPaths = selectedRows.sorted {$0.row > $1.row}
+            for indexPath in sortedPaths {
+                let transactionCount = transactions.count
+                let index = transactionCount - 1
+                for index in stride(from: index, through: 0, by: -1) {
+                    if(indexPath.row == index){
+                        transactions.remove(at: index)
+                    }
+                }
             }
-//            for item in items {
-//                if let index = transactions.first {
-//                    transactions.remove(at: index(item))
-//                }
-//            }
-            tableView.beginUpdates()
-            tableView.deleteRows(at: selectedRows, with: .automatic)
-            tableView.endUpdates()
+            tableView.deleteRows(at: sortedPaths, with: .automatic)
         }
     }
     
@@ -121,11 +121,8 @@ extension TransactionViewController: UITableViewDelegate, UITableViewDataSource 
         return cellProvider.numberOfSections()
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            transactions.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }
 
@@ -153,6 +150,9 @@ extension TransactionViewController: TransactionViewControllerProtocol {
         cell.set(categoryTitle: transactions[index].category)
         cell.set(priceLabel: String(format: "£%.2f", transactions[index].amount.value))
         
+        //  the right way of doing the image load on tableView is using a URLSession dataTask, and have a reference for those dataTasks that you can .cancel() as soon as the cell scrolls out of view but I struggled to implement this correctly
+        
+        
         if  let imageURL = URL(string: transactions[index].product.icon) {
                 DispatchQueue.global().async {
                     let data = try? Data(contentsOf: imageURL)
@@ -166,49 +166,4 @@ extension TransactionViewController: TransactionViewControllerProtocol {
             }
         }
     }
-       
-//    func configureRemoveButtonCell(cell: RemoveButtonViewProtocol) {
-//       
-//        if !self.tableView.isEditing {
-//            self.editButton.title = buttonNames.edit
-//            cell.set(isHidden: true)
-//        } else {
-//            self.editButton.title = buttonNames.done
-//            self.tableView.allowsMultipleSelection = true
-//            cell.set(isHidden: false)
-//            cell.setAction(action: { [weak self] in
-//                guard let transRow = self?.transactions else {return}
-//                if let selectedRows = self?.tableView.indexPathsForSelectedRows {
-//                var tmp = [Transactions]()
-//                for index in selectedRows {
-//                    tmp.append(transRow[index.row])
-//                }
-//
-//                for newTmp in tmp {
-//                    guard let endIndex = self?.transactions.endIndex else {return}
-//                    transactions.remove(at: endIndex)
-//                    }
-//
-//                }
-//            })
-//        }
-        
-//        cell.setAction(action: [weak self] in
-//            if(self.tablevi)
-//
-//
-//        cell.setAction {
-//            if (!self.tableView.isEditing) {
-//                self.editButton.title = "Edit"
-//                cell.set(isHidden: true)
-//                cell.setAction {
-//
-//                }
-//            } else {
-//                self.editButton.title = "Done"
-//                self.tableView.allowsMultipleSelection = true
-//                cell.set(isHidden: false)
-//            }
-//        }
-//    }
 }

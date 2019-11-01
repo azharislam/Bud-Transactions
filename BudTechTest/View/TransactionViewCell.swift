@@ -30,19 +30,20 @@ class TransactionViewCell: UITableViewCell {
         super.awakeFromNib()
         self.configureImageShape()
         self.formatLabels()
+        self.selectionStyle = .none
     }
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        if highlighted {
-            contentCellView.backgroundColor = .clear
-        }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        contentCellView.backgroundColor = selected ? .red : .clear
     }
 
     func configureImageShape() {
         logoView.layer.masksToBounds = true
-        logoView.layer.borderWidth = 1.5
+        logoView.layer.borderWidth = 0.5
         logoView.layer.borderColor = UIColor.lightGray.cgColor
         logoView.layer.cornerRadius = logoView.bounds.width / 2
+        
     }
        
     func formatLabels() {

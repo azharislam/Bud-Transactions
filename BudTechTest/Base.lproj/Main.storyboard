@@ -16,14 +16,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tv1-c5-Mfe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="900"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="900" id="6sb-4f-f6u"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Tet-CR-XjC"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2Q-Dh-jNA">
-                                <rect key="frame" x="0.0" y="862" width="414" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H2Q-Dh-jNA">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Remove">
@@ -36,12 +40,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="H2Q-Dh-jNA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4va-vx-v83"/>
-                            <constraint firstItem="H2Q-Dh-jNA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8fb-kk-QAt"/>
+                            <constraint firstItem="tv1-c5-Mfe" firstAttribute="bottom" secondItem="H2Q-Dh-jNA" secondAttribute="bottom" id="0Bu-Fu-wMT"/>
                             <constraint firstItem="tv1-c5-Mfe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Pv-QK-wml"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tv1-c5-Mfe" secondAttribute="trailing" id="LIP-od-EUK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="H2Q-Dh-jNA" secondAttribute="bottom" id="bjf-rQ-Csh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tv1-c5-Mfe" secondAttribute="bottom" id="hG3-1e-0dA"/>
+                            <constraint firstItem="H2Q-Dh-jNA" firstAttribute="top" secondItem="tv1-c5-Mfe" secondAttribute="bottom" id="Ws0-Qe-Rgo"/>
+                            <constraint firstItem="tv1-c5-Mfe" firstAttribute="bottom" secondItem="H2Q-Dh-jNA" secondAttribute="top" id="qwt-4X-Vq6"/>
                             <constraint firstItem="tv1-c5-Mfe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tmM-kx-8wH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

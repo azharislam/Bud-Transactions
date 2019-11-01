@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 
+struct TransactionItem {
+    private var item: Transactions
+    
+    var isSelected = false
+    var id: Int {
+        return item.product.id
+    }
+    
+    init(item: Transactions) {
+        self.item = item
+    }
+}
+
 struct TransactionModel: Codable {
     let data: [Transactions]
     

@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
+//  A cell provider class to allow easy re-use of any tableviewcell into a tableview and then call these in data source methods in VC.
+
+//  Initially wanted to add the button as a footer class and initialise it in tableview, didnt look how it was meant to look. Left the comments to see approach anyway lol.
+
 struct TransactionViewCellProvider {
     let vc: TransactionViewController
 
     enum Section {
         case cell
 //        case button
-
         init(index: Int) {
             switch index {
 //            case 0: self = .cell
@@ -25,7 +28,7 @@ struct TransactionViewCellProvider {
         }
     }
 
-    private let sections: [Section] = [.cell] //, .button
+    private let sections: [Section] = [.cell] // [.cell, .button]
 
     func register(on tableView: UITableView?) {
         
