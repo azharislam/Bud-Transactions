@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		79959ECB236B1EAC0086D42C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959ECA236B1EAC0086D42C /* AppDelegate.swift */; };
 		79959ECD236B1EAC0086D42C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959ECC236B1EAC0086D42C /* SceneDelegate.swift */; };
-		79959ECF236B1EAC0086D42C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959ECE236B1EAC0086D42C /* ViewController.swift */; };
+		79959ECF236B1EAC0086D42C /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959ECE236B1EAC0086D42C /* TransactionViewController.swift */; };
 		79959ED2236B1EAC0086D42C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79959ED0236B1EAC0086D42C /* Main.storyboard */; };
 		79959ED4236B1EAD0086D42C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79959ED3236B1EAD0086D42C /* Assets.xcassets */; };
 		79959ED7236B1EAD0086D42C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79959ED5236B1EAD0086D42C /* LaunchScreen.storyboard */; };
+		79959EE5236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959EE3236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.swift */; };
+		79959EE6236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79959EE4236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.xib */; };
+		79959EE9236B22C40086D42C /* TransactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959EE7236B22C40086D42C /* TransactionViewCell.swift */; };
+		79959EEA236B22C40086D42C /* TransactionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79959EE8236B22C40086D42C /* TransactionViewCell.xib */; };
+		79959EEC236B2C650086D42C /* TransactionViewCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959EEB236B2C650086D42C /* TransactionViewCellProvider.swift */; };
+		79959EF1236B35180086D42C /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959EF0236B35180086D42C /* TransactionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		79959EC7236B1EAC0086D42C /* BudTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79959ECA236B1EAC0086D42C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79959ECC236B1EAC0086D42C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		79959ECE236B1EAC0086D42C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79959ECE236B1EAC0086D42C /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		79959ED1236B1EAC0086D42C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79959ED3236B1EAD0086D42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79959ED6236B1EAD0086D42C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79959ED8236B1EAD0086D42C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79959EE3236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButtonFooterViewTableViewCell.swift; sourceTree = "<group>"; };
+		79959EE4236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemoveButtonFooterViewTableViewCell.xib; sourceTree = "<group>"; };
+		79959EE7236B22C40086D42C /* TransactionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewCell.swift; sourceTree = "<group>"; };
+		79959EE8236B22C40086D42C /* TransactionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionViewCell.xib; sourceTree = "<group>"; };
+		79959EEB236B2C650086D42C /* TransactionViewCellProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewCellProvider.swift; sourceTree = "<group>"; };
+		79959EF0236B35180086D42C /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,53 @@
 		79959EC9236B1EAC0086D42C /* BudTechTest */ = {
 			isa = PBXGroup;
 			children = (
-				79959ECA236B1EAC0086D42C /* AppDelegate.swift */,
-				79959ECC236B1EAC0086D42C /* SceneDelegate.swift */,
-				79959ECE236B1EAC0086D42C /* ViewController.swift */,
+				79959EE2236B1ED00086D42C /* Delegates */,
+				79959EE1236B1EC80086D42C /* Controller */,
+				79959EDF236B1EBA0086D42C /* View */,
+				79959EDE236B1EB40086D42C /* Model */,
 				79959ED0236B1EAC0086D42C /* Main.storyboard */,
 				79959ED3236B1EAD0086D42C /* Assets.xcassets */,
 				79959ED5236B1EAD0086D42C /* LaunchScreen.storyboard */,
 				79959ED8236B1EAD0086D42C /* Info.plist */,
 			);
 			path = BudTechTest;
+			sourceTree = "<group>";
+		};
+		79959EDE236B1EB40086D42C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79959EF0236B35180086D42C /* TransactionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79959EDF236B1EBA0086D42C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79959EE3236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.swift */,
+				79959EE4236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.xib */,
+				79959EE7236B22C40086D42C /* TransactionViewCell.swift */,
+				79959EE8236B22C40086D42C /* TransactionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79959EE1236B1EC80086D42C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79959ECE236B1EAC0086D42C /* TransactionViewController.swift */,
+				79959EEB236B2C650086D42C /* TransactionViewCellProvider.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		79959EE2236B1ED00086D42C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				79959ECA236B1EAC0086D42C /* AppDelegate.swift */,
+				79959ECC236B1EAC0086D42C /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +178,8 @@
 				79959ED7236B1EAD0086D42C /* LaunchScreen.storyboard in Resources */,
 				79959ED4236B1EAD0086D42C /* Assets.xcassets in Resources */,
 				79959ED2236B1EAC0086D42C /* Main.storyboard in Resources */,
+				79959EE6236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.xib in Resources */,
+				79959EEA236B22C40086D42C /* TransactionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79959ECF236B1EAC0086D42C /* ViewController.swift in Sources */,
+				79959EF1236B35180086D42C /* TransactionModel.swift in Sources */,
+				79959ECF236B1EAC0086D42C /* TransactionViewController.swift in Sources */,
+				79959EE9236B22C40086D42C /* TransactionViewCell.swift in Sources */,
+				79959EEC236B2C650086D42C /* TransactionViewCellProvider.swift in Sources */,
 				79959ECB236B1EAC0086D42C /* AppDelegate.swift in Sources */,
 				79959ECD236B1EAC0086D42C /* SceneDelegate.swift in Sources */,
+				79959EE5236B22AF0086D42C /* RemoveButtonFooterViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
