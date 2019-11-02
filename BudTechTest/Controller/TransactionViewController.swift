@@ -21,7 +21,6 @@ protocol TransactionViewControllerProtocol: AnyObject {
     func setNavigation()
     func configureTransactionCell(at index: Int, cell: TransactionViewCellProtocol)
     func setRemoveButtonTitle(_ title: String)
-//    func configureRemoveButtonCell(cell: RemoveButtonViewProtocol)
 }
 
 class TransactionViewController: UIViewController {

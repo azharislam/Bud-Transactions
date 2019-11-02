@@ -6,8 +6,7 @@
 //  Copyright © 2019 Azhar Islam. All rights reserved.
 //
 
-//This class was created to implement the remove button as a tableviewcell in the footer of tableView
-//Unused cell
+//  This cell class was unused but was created to implement the remove button as a tableviewcell in the footer of tableView
 
 import UIKit
 
