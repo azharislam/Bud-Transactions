@@ -141,7 +141,7 @@ extension TransactionViewController: TransactionViewControllerProtocol {
     
     func setNavigation() {
         self.editButton.tintColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.barTintColor = .black
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
@@ -150,8 +150,7 @@ extension TransactionViewController: TransactionViewControllerProtocol {
         cell.set(categoryTitle: transactions[index].category)
         cell.set(priceLabel: String(format: "£%.2f", transactions[index].amount.value))
         
-        //  the right way of doing the image load on tableView is using a URLSession dataTask, and have a reference for those dataTasks that you can .cancel() as soon as the cell scrolls out of view but I struggled to implement this correctly
-        
+        //  the right way of doing the image load on tableView is using a URLSession dataTask, and have a reference for those dataTasks so that you can .cancel() as soon as the cell scrolls out of view but I struggled to implement this and have it working
         
         if  let imageURL = URL(string: transactions[index].product.icon) {
                 DispatchQueue.global().async {
