@@ -11,7 +11,7 @@ import UIKit
 
 //  A cell provider class to allow easy re-use of any tableviewcell into a tableview and then call these in data source methods in VC.
 
-//  Initially wanted to add the button as a footer class and initialise it in tableview, didnt look how it was meant to look. Left the comments to see approach anyway lol.
+//  Initially wanted to add the button as a footer class and initialise it in tableview, didnt look how it was meant to look. Left the comments to see approach.
 
 struct TransactionViewCellProvider {
     let vc: TransactionViewController

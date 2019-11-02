@@ -21,7 +21,18 @@
 		79959EF1236B35180086D42C /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79959EF0236B35180086D42C /* TransactionModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7994ECBC236DA04C00550139 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79959EBF236B1EAC0086D42C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79959EC6236B1EAC0086D42C;
+			remoteInfo = BudTechTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		7994ECB7236DA04C00550139 /* BudTechTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudTechTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79959EC7236B1EAC0086D42C /* BudTechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudTechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79959ECA236B1EAC0086D42C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79959ECC236B1EAC0086D42C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +50,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7994ECB4236DA04C00550139 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79959EC4236B1EAC0086D42C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				79959EC7236B1EAC0086D42C /* BudTechTest.app */,
+				7994ECB7236DA04C00550139 /* BudTechTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +139,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7994ECB6236DA04C00550139 /* BudTechTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7994ECBE236DA04C00550139 /* Build configuration list for PBXNativeTarget "BudTechTestTests" */;
+			buildPhases = (
+				7994ECB3236DA04C00550139 /* Sources */,
+				7994ECB4236DA04C00550139 /* Frameworks */,
+				7994ECB5236DA04C00550139 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7994ECBD236DA04C00550139 /* PBXTargetDependency */,
+			);
+			name = BudTechTestTests;
+			productName = BudTechTestTests;
+			productReference = 7994ECB7236DA04C00550139 /* BudTechTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		79959EC6236B1EAC0086D42C /* BudTechTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79959EDB236B1EAD0086D42C /* Build configuration list for PBXNativeTarget "BudTechTest" */;
@@ -147,6 +184,10 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Azhar Islam";
 				TargetAttributes = {
+					7994ECB6236DA04C00550139 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 79959EC6236B1EAC0086D42C;
+					};
 					79959EC6236B1EAC0086D42C = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -166,11 +207,19 @@
 			projectRoot = "";
 			targets = (
 				79959EC6236B1EAC0086D42C /* BudTechTest */,
+				7994ECB6236DA04C00550139 /* BudTechTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7994ECB5236DA04C00550139 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79959EC5236B1EAC0086D42C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +235,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7994ECB3236DA04C00550139 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		79959EC3236B1EAC0086D42C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +257,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7994ECBD236DA04C00550139 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79959EC6236B1EAC0086D42C /* BudTechTest */;
+			targetProxy = 7994ECBC236DA04C00550139 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		79959ED0236B1EAC0086D42C /* Main.storyboard */ = {
@@ -222,6 +286,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7994ECBF236DA04C00550139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63TQVKT6GS;
+				INFOPLIST_FILE = BudTechTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aislam.BudTechTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BudTechTest.app/BudTechTest";
+			};
+			name = Debug;
+		};
+		7994ECC0236DA04C00550139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63TQVKT6GS;
+				INFOPLIST_FILE = BudTechTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aislam.BudTechTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BudTechTest.app/BudTechTest";
+			};
+			name = Release;
+		};
 		79959ED9236B1EAD0086D42C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -375,6 +479,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7994ECBE236DA04C00550139 /* Build configuration list for PBXNativeTarget "BudTechTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7994ECBF236DA04C00550139 /* Debug */,
+				7994ECC0236DA04C00550139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		79959EC2236B1EAC0086D42C /* Build configuration list for PBXProject "BudTechTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

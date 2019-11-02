@@ -7,6 +7,7 @@
 //
 
 //This class was created to implement the remove button as a tableviewcell in the footer of tableView
+//Unused cell
 
 import UIKit
 

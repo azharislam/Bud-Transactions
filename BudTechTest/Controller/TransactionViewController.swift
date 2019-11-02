@@ -46,6 +46,7 @@ class TransactionViewController: UIViewController {
         self.downloadJSON()
         tableView?.dataSource = self
         cellProvider.register(on: tableView)
+        
         self.tableView.rowHeight = TransactionViewCell.height
         self.removeButton.isHidden = true
         self.setNavigation()
@@ -63,24 +64,7 @@ class TransactionViewController: UIViewController {
     }
     
     @IBAction func removeCellTapped(_ sender: Any) {
-        
-        //  The best way to present this would have been to configure the didSelect tableView items and call a delegate that receives the call that a user has selected a row, then do the logic of comparing the two arrays and then add the action inside this. Struggled with doing that efficienty so found a way to delete the items in a hacky way
-        
-        //  Another thing I did initially was use the editingStyle = .delete on tableView delegate but this only allowed me to swipe and delete which didn't meet requirement
-        
-        if let selectedRows = tableView.indexPathsForSelectedRows {
-            let sortedPaths = selectedRows.sorted {$0.row > $1.row}
-            for indexPath in sortedPaths {
-                let transactionCount = transactions.count
-                let index = transactionCount - 1
-                for index in stride(from: index, through: 0, by: -1) {
-                    if(indexPath.row == index){
-                        transactions.remove(at: index)
-                    }
-                }
-            }
-            tableView.deleteRows(at: sortedPaths, with: .automatic)
-        }
+        self.removeCell()
     }
     
     func downloadJSON() {
@@ -105,6 +89,22 @@ class TransactionViewController: UIViewController {
                 print("Error while trying to download")
             }
         }.resume()
+    }
+    
+    func removeCell() {
+        if let selectedRows = tableView.indexPathsForSelectedRows {
+                let sortedPaths = selectedRows.sorted {$0.row > $1.row}
+                for indexPath in sortedPaths {
+                    let transactionCount = transactions.count
+                    let index = transactionCount - 1
+                    for index in stride(from: index, through: 0, by: -1) {
+                        if(indexPath.row == index){
+                            transactions.remove(at: index)
+                        }
+                    }
+                }
+                tableView.deleteRows(at: sortedPaths, with: .automatic)
+            }
     }
 }
 
