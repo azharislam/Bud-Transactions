@@ -34,7 +34,6 @@ class TransactionViewController: UIViewController {
        }()
     
     var transactions = [Transactions]()
-    var items = [Transactions]()
     var isTapped: Bool?
     var isEditingCells = false
     
