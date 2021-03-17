@@ -1,5 +1,6 @@
 # BudTest
 
+My first iOS developer tech test for a company, didn't turn out successful unfortunately but I kept it moving. 
 Parse a list of transactions and display them according to design
 
 - Parse JSON file 
